@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`bg-gray-900 bg-opacity-50 text-white ${myFont.className}`}>
+    <html lang="en" className={`bg-gradient-to-r from-gray-900 via-transparent to-transparent text-white ${myFont.className}`}>
       <body>{children}</body>
     </html>
   );
