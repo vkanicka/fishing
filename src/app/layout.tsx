@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Alata as MY_FONT } from 'next/font/google'
+import { Silkscreen as MY_FONT } from 'next/font/google'
 const myFont = MY_FONT(
   {
     subsets: ['latin'],
