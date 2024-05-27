@@ -3,6 +3,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+ .animate-spin-reverse {
+    @apply animate-spin;
+    animation-direction: reverse;
+  }
+}
+
 * {
   font-family: 'Poppins', sans-serif;
 }

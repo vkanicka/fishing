@@ -5,12 +5,9 @@ interface FishModel extends Models.Document {
     location?: string[];
     time?: boolean;
     seasons?: string[];
-    inSpring?: boolean;
-    inSummer?: boolean;
-    inFall?: boolean;
-    inWinter?: boolean;
     weather: string;
     special: string;
+    gameKeys?: string[];
 }
 
 export default FishModel;

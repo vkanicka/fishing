@@ -1,26 +1,49 @@
 'use client'
 
+import { updateFishGames } from '@/data/client';
 import Season from '@/data/types/season';
 import Fish from '@models/fish'
 import { useState } from 'react';
-import {AlertTriangle, Moon, Sun, CloudRain, Star} from 'react-feather'
+import {AlertTriangle, Sun, CloudRain, Square, CheckSquare, RefreshCw, RefreshCcw} from 'react-feather'
 
 type Props = {
     fish: Fish;
     currentSeason: Season | undefined;
+    gameId?: string;
 }
 
-const FishComponent = ({ fish, currentSeason }: Props) => {
-    const { name, location, weather, time, seasons, special } = fish
+const FishComponent = ({ fish, currentSeason, gameId }: Props) => {
+    const { name, weather, time, seasons, special, gameKeys } = fish
     const isRain = weather === 'Rain'
     const isSun = weather === 'Sun'
     const isLastSeason =
         currentSeason === 'Winter' ? (!seasons?.includes('Spring')) : (seasons?.[seasons?.length - 1] === currentSeason)
     const [showTime, setShowTime] = useState(false)
+    const [isCaught, setIsCaught] = useState(gameKeys?.includes(gameId as string))
+    const [isLoading, setIsLoading] = useState(false)
+
+    const toggleCatch = (name: string) => {
+        if (!gameId) return;
+        setIsLoading(true)
+        let newGameKeys = [...gameKeys as string[]] ?? []
+        if (!isCaught) {
+            newGameKeys.push(gameId as string)
+        } else {
+            newGameKeys = newGameKeys.filter(x=>x!==gameId)
+        }
+        updateFishGames(fish.$id, newGameKeys)
+            .then((result) => {
+                setIsCaught(!isCaught)
+                setIsLoading(false)
+        })
+
+
+    }
     
     return (
-        <li onMouseEnter={()=>setShowTime(true)} onMouseLeave={()=>setShowTime(false)} className='flex gap-2 relative hover:cursor-pointer hover:font-bold'>
-            <p>{name}</p>
+        <li onClick={()=>toggleCatch(name)} onMouseEnter={()=>setShowTime(true)} onMouseLeave={()=>setShowTime(false)} className='flex gap-2 relative hover:cursor-pointer hover:font-bold'>
+            {isLoading ? !isCaught ? <RefreshCw className='animate-spin' /> : <RefreshCcw className='animate-spin-reverse' /> : isCaught ? <CheckSquare/> : <Square/>}
+            <p className='text-nowrap'>{name}</p>
             {isRain && (
                 <CloudRain color='black'/>
             )}
@@ -34,7 +57,7 @@ const FishComponent = ({ fish, currentSeason }: Props) => {
                 <AlertTriangle color='black'/>
             )}
             {!!showTime && (
-                <div className='absolute z-[999] bg-white w-full'>
+                <div className=' z-[999] bg-white w-full'>
                     <p className='text-nowrap bg-white z-[999]'>{time}{!!special && ' and '+special}</p>
                 </div>
             )}
