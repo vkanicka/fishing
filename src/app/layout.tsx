@@ -1,5 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Alata as MY_FONT } from 'next/font/google'
+const myFont = MY_FONT(
+  {
+    subsets: ['latin'],
+    display: 'swap',
+    weight: "400"
+  }
+)
+ 
 
 export const metadata: Metadata = {
   title: "LastMinuteFishing",
@@ -12,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-gray-900 bg-opacity-50 text-white">
+    <html lang="en" className={`bg-gray-900 bg-opacity-50 text-white ${myFont.className}`}>
       <body>{children}</body>
     </html>
   );

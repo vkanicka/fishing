@@ -54,7 +54,7 @@ const FishComponent = ({ fish, currentSeason, gameId }: Props) => {
                 <Moon color='black'/>
             )} */}
             {isLastSeason && (
-                <AlertTriangle className={`${isCaught ? 'text-lime-300' : 'text-red-300'}`}/>
+                <AlertTriangle className={`${isCaught ? 'text-lime-300' : 'text-orange-300'}`}/>
             )}
             {!!showTime && (
                 <div className=' z-[999]'>
