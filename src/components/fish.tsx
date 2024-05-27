@@ -45,20 +45,20 @@ const FishComponent = ({ fish, currentSeason, gameId }: Props) => {
             {isLoading ? !isCaught ? <RefreshCw className='animate-spin text-fuchsia-300' /> : <RefreshCcw className='animate-spin-reverse text-fuchsia-300' /> : isCaught ? <CheckSquare className='text-lime-300 shadow-glow drop-shadow-glow'/> : <Square className='text-gray-300'/>}
             <p className={`text-nowrap ${isCaught ? 'text-lime-300 shadow-glow drop-shadow-glow' : 'shadow-fog drop-shadow-fog'}`}>{name}</p>
             {isRain && (
-                <CloudRain className={`${isCaught ? 'text-lime-300' : 'text-cyan-300'}`}/>
+                <CloudRain className={`${isCaught ? 'text-lime-300 shadow-glow' : 'text-cyan-300 drop-shadow-fog'}`}/>
             )}
             {isSun && (
-                <Sun className={`${isCaught ? 'text-lime-300' : 'text-yellow-300'}`}/>
+                <Sun className={`${isCaught ? 'text-lime-300 shadow-glow' : 'text-yellow-300 drop-shadow-fog'}`}/>
             )}
             {/* {isNight && (
                 <Moon color='black'/>
             )} */}
             {isLastSeason && (
-                <AlertTriangle className={`${isCaught ? 'text-lime-300' : 'text-orange-300'}`}/>
+                <AlertTriangle className={`${isCaught ? 'text-lime-300 shadow-glow' : 'text-orange-300 drop-shadow-fog'}`}/>
             )}
             {!!showTime && (
                 <div className=' z-[999]'>
-                    <p className='text-nowrap z-[999] italic font-normal text-fuchsia-200'>{time}{!!special && ' and '+special}</p>
+                    <p className='text-nowrap z-[999] italic font-normal text-fuchsia-200 drop-shadow-fog'>{time}{!!special && ' and '+special}</p>
                 </div>
             )}
         </li>

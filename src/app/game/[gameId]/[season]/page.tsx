@@ -30,7 +30,7 @@ const GamePage = () => {
                 {LOCATIONS?.map((location, locationIndex) => {
                     return !!fishes?.length && (
                         <div key={locationIndex}>
-                            <p className="font-bold text-fuchsia-300" key={locationIndex}>{location}</p>
+                            <p className="font-bold text-fuchsia-300 drop-shadow-fog" key={locationIndex}>{location}</p>
                             {fishes?.map((fish, fishIndex) => {
                                 // console.log(fish)
                                 if (fish.location?.includes(location)) {
