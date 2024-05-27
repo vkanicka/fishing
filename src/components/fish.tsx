@@ -45,16 +45,16 @@ const FishComponent = ({ fish, currentSeason, gameId }: Props) => {
             {isLoading ? !isCaught ? <RefreshCw className='animate-spin text-fuchsia-300' /> : <RefreshCcw className='animate-spin-reverse text-fuchsia-300' /> : isCaught ? <CheckSquare className='text-lime-300'/> : <Square/>}
             <p className={`text-nowrap ${isCaught ? 'text-lime-300' : ''}`}>{name}</p>
             {isRain && (
-                <CloudRain className='text-cyan-300'/>
+                <CloudRain className={`${isCaught ? 'text-lime-300' : 'text-cyan-300'}`}/>
             )}
             {isSun && (
-                <Sun className='text-yellow-300'/>
+                <Sun className={`${isCaught ? 'text-lime-300' : 'text-yellow-300'}`}/>
             )}
             {/* {isNight && (
                 <Moon color='black'/>
             )} */}
             {isLastSeason && (
-                <AlertTriangle className='text-red-300'/>
+                <AlertTriangle className={`${isCaught ? 'text-lime-300' : 'text-red-300'}`}/>
             )}
             {!!showTime && (
                 <div className=' z-[999]'>
