@@ -42,8 +42,8 @@ const FishComponent = ({ fish, currentSeason, gameId }: Props) => {
     
     return (
         <li onClick={()=>toggleCatch(name)} onMouseEnter={()=>setShowTime(true)} onMouseLeave={()=>setShowTime(false)} className='text-white flex gap-2 relative hover:cursor-pointer hover:font-bold'>
-            {isLoading ? !isCaught ? <RefreshCw className='animate-spin text-fuchsia-300' /> : <RefreshCcw className='animate-spin-reverse text-fuchsia-300' /> : isCaught ? <CheckSquare className='text-lime-300'/> : <Square className='text-gray-300'/>}
-            <p className={`text-nowrap ${isCaught ? 'text-lime-300' : ''}`}>{name}</p>
+            {isLoading ? !isCaught ? <RefreshCw className='animate-spin text-fuchsia-300' /> : <RefreshCcw className='animate-spin-reverse text-fuchsia-300' /> : isCaught ? <CheckSquare className='text-lime-300 shadow-glow drop-shadow-glow'/> : <Square className='text-gray-300'/>}
+            <p className={`text-nowrap ${isCaught ? 'text-lime-300 shadow-glow drop-shadow-glow' : 'shadow-fog drop-shadow-fog'}`}>{name}</p>
             {isRain && (
                 <CloudRain className={`${isCaught ? 'text-lime-300' : 'text-cyan-300'}`}/>
             )}
