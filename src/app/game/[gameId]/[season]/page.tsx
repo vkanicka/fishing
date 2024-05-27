@@ -24,7 +24,7 @@ const GamePage = () => {
     },[])
 
     return (
-        <div className="m-6 flex flex-col gap-6">
+        <div className="p-6 flex flex-col gap-6 bg-gray-900 bg-opacity-50">
             <SeasonsNavGame currentSeason={params.season as Season} gameId={params.gameId as string} />
             <ul className="flex flex-col gap-4 w-full justify-around">
                 {LOCATIONS?.map((location, locationIndex) => {
