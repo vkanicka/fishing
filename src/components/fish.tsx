@@ -42,19 +42,19 @@ const FishComponent = ({ fish, currentSeason, gameId }: Props) => {
     
     return (
         <li onClick={()=>toggleCatch(name)} onMouseEnter={()=>setShowTime(true)} onMouseLeave={()=>setShowTime(false)} className='text-white flex gap-2 relative hover:cursor-pointer hover:font-bold'>
-            {isLoading ? !isCaught ? <RefreshCw className='animate-spin text-fuchsia-300' /> : <RefreshCcw className='animate-spin-reverse text-fuchsia-300' /> : isCaught ? <CheckSquare className='text-lime-300 shadow-glow drop-shadow-glow'/> : <Square className='text-gray-300'/>}
+            {isLoading ? !isCaught ? <RefreshCw className='animate-spin text-fuchsia-300' /> : <RefreshCcw className='animate-spin-reverse text-fuchsia-300' /> : isCaught ? <CheckSquare className='text-lime-300 shadow-glow drop-shadow-glow'/> : <Square className='text-gray-300 drop-shadow-fog'/>}
             <p className={`text-nowrap ${isCaught ? 'text-lime-300 shadow-glow drop-shadow-glow' : 'shadow-fog drop-shadow-fog'}`}>{name}</p>
             {isRain && (
-                <CloudRain className={`${isCaught ? 'text-lime-300 shadow-glow' : 'text-cyan-300 drop-shadow-fog'}`}/>
+                <CloudRain className={`${isCaught ? 'text-lime-300 drop-shadow-glow' : 'text-cyan-300 drop-shadow-fog'}`}/>
             )}
             {isSun && (
-                <Sun className={`${isCaught ? 'text-lime-300 shadow-glow' : 'text-yellow-300 drop-shadow-fog'}`}/>
+                <Sun className={`${isCaught ? 'text-lime-300 drop-shadow-glow' : 'text-yellow-300 drop-shadow-fog'}`}/>
             )}
             {/* {isNight && (
                 <Moon color='black'/>
             )} */}
             {isLastSeason && (
-                <AlertTriangle className={`${isCaught ? 'text-lime-300 shadow-glow' : 'text-orange-300 drop-shadow-fog'}`}/>
+                <AlertTriangle className={`${isCaught ? 'text-lime-300 drop-shadow-glow' : 'text-orange-300 drop-shadow-fog'}`}/>
             )}
             {!!showTime && (
                 <div className=' z-[999]'>
