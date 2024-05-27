@@ -14,7 +14,7 @@ const Fishes = async () => {
     const fishes = await getFish()
 
     return (
-        <div className="m-6 flex flex-col gap-6">
+        <div className="m-6 flex flex-col gap-6bg-gray-900 bg-opacity-50">
 
             <SeasonsNav currentSeason={currentSeason} />
 

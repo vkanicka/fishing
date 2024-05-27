@@ -8,7 +8,7 @@ export default function Home() {
   }
 
   return (
-    <main className="bg-transparent flex flex-col gap-4 my-16 mx-auto items-center">
+    <main className="flex flex-col gap-4 my-16 mx-auto items-center">
       <CreateNewGameComponent />
       <h3>Preview Fish By Season</h3>
       <nav className="flex flex-col gap-4 items-center">

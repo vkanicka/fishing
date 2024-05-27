@@ -24,13 +24,13 @@ const GamePage = () => {
     },[])
 
     return (
-        <div className="p-6 flex flex-col gap-6 bg-gray-900 bg-opacity-50">
+        <div className="p-6 flex flex-col gap-6">
             <SeasonsNavGame currentSeason={params.season as Season} gameId={params.gameId as string} />
             <ul className="flex flex-col gap-4 w-full justify-around">
                 {LOCATIONS?.map((location, locationIndex) => {
                     return !!fishes?.length && (
                         <div key={locationIndex}>
-                            <p className="font-bold text-white" key={locationIndex}>{location}</p>
+                            <p className="font-bold text-fuchsia-300" key={locationIndex}>{location}</p>
                             {fishes?.map((fish, fishIndex) => {
                                 // console.log(fish)
                                 if (fish.location?.includes(location)) {
