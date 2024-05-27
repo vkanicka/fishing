@@ -57,8 +57,8 @@ const FishComponent = ({ fish, currentSeason, gameId }: Props) => {
                 <AlertTriangle className='text-red-300'/>
             )}
             {!!showTime && (
-                <div className=' z-[999] bg-white w-full'>
-                    <p className='text-nowrap bg-white z-[999]'>{time}{!!special && ' and '+special}</p>
+                <div className=' z-[999]'>
+                    <p className='text-nowrap z-[999]'>{time}{!!special && ' and '+special}</p>
                 </div>
             )}
         </li>
