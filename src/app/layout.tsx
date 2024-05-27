@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`bg-gray-900 bg-opacity-40 text-white ${myFont.className}`}>
+    <html lang="en" className={`bg-gray-900 bg-opacity-60 text-white ${myFont.className}`}>
       <body>{children}</body>
     </html>
   );
