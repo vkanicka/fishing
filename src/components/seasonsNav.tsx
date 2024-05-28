@@ -11,7 +11,7 @@ const SeasonsNav = ({ currentSeason } : Props) => {
         <ul className="flex gap-2">
                 {SEASONS.map((season, index) => {
                     return (
-                        <Link className={season === currentSeason ? 'underline font-bold' : ''} key={index} href={`/fishes/${season}`}>{season}</Link>
+                        <Link className={season === currentSeason ? 'underline font-bold' : ''} key={index} href={`/fishes/${season.toLowerCase()}`}>{season}</Link>
                     )
                 })}
             </ul>
