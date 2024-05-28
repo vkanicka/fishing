@@ -21,10 +21,10 @@ export default function Home() {
       <div className="flex flex-col gap-2 border-2 border-white border-solid p-6 m-2 lg:m-6 items-center rounded-xl border-b-4 border-r-4">
         <h3>Preview Fish By Season</h3>
         <nav className="flex flex-col gap-4 items-center">
-          <Link className="max-w-[300px] hover:cursor-pointer p-2 border-4 border-fuchsia-400 border-solid rounded-lg hover:underline hover:bg-gray-600 shadow-glow drop-shadow-glow min-w-[200px] text-center" href={'/fishes/Spring'}>Spring</Link>
-          <Link className="max-w-[300px] hover:cursor-pointer p-2 border-4 border-fuchsia-400 border-solid rounded-lg hover:underline hover:bg-gray-600 shadow-glow drop-shadow-glow min-w-[200px] text-center" href={'/fishes/Summer'}>Summer</Link>
-          <Link className="max-w-[300px] hover:cursor-pointer p-2 border-4 border-fuchsia-400 border-solid rounded-lg hover:underline hover:bg-gray-600 shadow-glow drop-shadow-glow min-w-[200px] text-center" href={'/fishes/Fall'}>Fall</Link>
-          <Link className="max-w-[300px] hover:cursor-pointer p-2 border-4 border-fuchsia-400 border-solid rounded-lg hover:underline hover:bg-gray-600 shadow-glow drop-shadow-glow min-w-[200px] text-center" href={'/fishes/Winter'}>Winter</Link>
+          <Link className="max-w-[300px] hover:cursor-pointer p-2 border-4 border-fuchsia-400 border-solid rounded-lg hover:underline hover:bg-gray-600 shadow-glow drop-shadow-glow min-w-[200px] text-center" href={'/fishes/spring'}>Spring</Link>
+          <Link className="max-w-[300px] hover:cursor-pointer p-2 border-4 border-fuchsia-400 border-solid rounded-lg hover:underline hover:bg-gray-600 shadow-glow drop-shadow-glow min-w-[200px] text-center" href={'/fishes/summer'}>Summer</Link>
+          <Link className="max-w-[300px] hover:cursor-pointer p-2 border-4 border-fuchsia-400 border-solid rounded-lg hover:underline hover:bg-gray-600 shadow-glow drop-shadow-glow min-w-[200px] text-center" href={'/fishes/fall'}>Fall</Link>
+          <Link className="max-w-[300px] hover:cursor-pointer p-2 border-4 border-fuchsia-400 border-solid rounded-lg hover:underline hover:bg-gray-600 shadow-glow drop-shadow-glow min-w-[200px] text-center" href={'/fishes/winter'}>Winter</Link>
           
         </nav>
       </div>
