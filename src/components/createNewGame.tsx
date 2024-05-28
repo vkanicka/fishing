@@ -15,7 +15,7 @@ const CreateNewGameComponent = () => {
 
     }
     return (
-        <button onClick={()=>createNewGame()} className="max-w-[300px] hover:cursor-pointer">Create New Game</button>
+        <button onClick={()=>createNewGame()} className="max-w-[300px] hover:cursor-pointer p-2 border-4 border-fuchsia-400 border-solid rounded-lg hover:underline hover:bg-gray-600 shadow-glow drop-shadow-glow">Create New Game</button>
     )
 }
 export default CreateNewGameComponent;
